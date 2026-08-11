@@ -9,7 +9,7 @@ you create by **PROG-pairing** — so nothing desyncs and no physical remote is
 cloned. A background service runs the schedule; a `blindz` command lets you
 configure everything and send commands by hand.
 
-This is a re-implementation of the [BlindzTimez Flipper Zero app](../BlindzTimez)
+This is a re-implementation of the [BlindzTimez Flipper Zero app](https://github.com/Cloudy261/BlindzTimez)
 in Python. The Somfy protocol encoder is a direct port and produces byte-for-byte
 identical RF frames (verified against a real Flipper `.sub` capture).
 
