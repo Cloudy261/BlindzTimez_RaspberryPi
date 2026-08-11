@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.DS_Store
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+# Local runtime state (never commit real remote serials/counters)
+state.json
+*.log
+*.lock
+
+LOG.md

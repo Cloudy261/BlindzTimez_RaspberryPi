@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blindztimez"
+version = "1.0.0"
+description = "Somfy RTS (433.42 MHz) blind controller for a headless Raspberry Pi + CC1101"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "BlindzTimez" }]
+
+# Hardware dependencies. These only install/run on the Raspberry Pi; the rest of
+# the code (config, scheduling, menu) imports them lazily so it also runs on a
+# plain dev machine without a radio attached.
+dependencies = [
+    "cc1101>=2.7",
+    "pigpio>=1.78",
+]
+
+[project.scripts]
+blindz = "blindztimez.cli:main"
+
+[tool.setuptools]
+packages = ["blindztimez"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "C4"]

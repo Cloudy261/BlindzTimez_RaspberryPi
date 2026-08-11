@@ -1,0 +1,4 @@
+# Runtime dependencies (installed on the Raspberry Pi).
+# On the Pi, spidev usually comes from apt: sudo apt install python3-spidev
+cc1101>=2.7
+pigpio>=1.78

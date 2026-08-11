@@ -1,0 +1,20 @@
+[Unit]
+Description=BlindzTimez Somfy RTS blind scheduler
+# Needs the pigpio daemon for precise transmit timing.
+Wants=pigpiod.service network-online.target
+After=pigpiod.service time-sync.target network-online.target
+
+[Service]
+Type=simple
+# --- EDIT THESE for your Pi (see INSTALL.md) ---
+# The user must be in the 'spi' and 'gpio' groups.
+User=pi
+Environment=BLINDZ_STATE_DIR=/home/pi/.config/blindztimez
+# Full path to the `blindz` entry point inside the virtualenv you created:
+ExecStart=/home/pi/blindz-venv/bin/blindz daemon
+# -----------------------------------------------
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
